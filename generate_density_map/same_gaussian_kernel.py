@@ -47,6 +47,7 @@ def generate_density_map_with_fixed_kernel(img,points,kernel_size=15,sigma=4.0):
     return d_map
 
 
+# test code
 if __name__=="__main__":
     # show an example to use function generate_density_map_with_fixed_kernel.
     import matplotlib.pyplot as plt 

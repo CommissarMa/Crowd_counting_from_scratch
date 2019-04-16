@@ -53,6 +53,8 @@ def gaussian_filter_density(img,points):
     print ('done.')
     return density
 
+
+# test code
 if __name__=="__main__":
     # show an example to use function generate_density_map_with_fixed_kernel.
     root = 'D:\workspace\ShanghaiTech_dataset'

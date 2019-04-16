@@ -43,6 +43,7 @@ class CrowdDataset(Dataset):
         return img,gt_dmap
 
 
+# test code
 if __name__=="__main__":
     img_root="D:\\workspaceMaZhenwei\\Shanghai_part_A\\train_data\\images"
     gt_dmap_root="D:\\workspaceMaZhenwei\\Shanghai_part_A\\train_data\\ground_truth"
