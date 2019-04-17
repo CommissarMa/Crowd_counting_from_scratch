@@ -2,6 +2,8 @@ from torch.utils.data import Dataset
 import os
 import matplotlib.pyplot as plt
 import numpy as np
+import torch
+import cv2
 
 
 class CrowdDataset(Dataset):
@@ -34,13 +36,20 @@ class CrowdDataset(Dataset):
             img=np.concatenate((img,img,img),2)
 
         gt_dmap=np.load(os.path.join(self.gt_dmap_root,img_name.replace('.jpg','.npy')))
+        # print(gt_dmap.sum())
         if self.gt_downsample>1: # to downsample image and density-map to match deep-model.
             ds_rows=int(img.shape[0]//self.gt_downsample)
             ds_cols=int(img.shape[1]//self.gt_downsample)
-            img=img[0:ds_rows*self.gt_downsample,0:ds_cols*self.gt_downsample,:]
-            gt_dmap=gt_dmap[0:ds_rows,0:ds_cols]
+            img = cv2.resize(img,(ds_cols*self.gt_downsample,ds_rows*self.gt_downsample))
+            img=img.transpose((2,0,1)) # convert to order (channel,rows,cols)
+            gt_dmap=cv2.resize(gt_dmap,(ds_cols,ds_rows))
+            gt_dmap=gt_dmap[np.newaxis,:,:]*self.gt_downsample*self.gt_downsample
+        
+        img_tensor=torch.tensor(img,dtype=torch.float)
+        gt_dmap_tensor=torch.tensor(gt_dmap,dtype=torch.float)
+        # print(gt_dmap_tensor.sum())
 
-        return img,gt_dmap
+        return img_tensor,gt_dmap_tensor
 
 
 # test code
@@ -53,6 +62,4 @@ if __name__=="__main__":
         # plt.figure()
         # plt.imshow(gt_dmap)
         # plt.figure()
-        # if i>5:
-        #     break
         print(img.shape,gt_dmap.shape)
