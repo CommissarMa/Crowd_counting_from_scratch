@@ -17,5 +17,10 @@ This is an overview and tutorial about crowd counting. In this repository, you c
 &emsp;For beginner, [[paper-MCNN-CVPR2016]](https://pdfs.semanticscholar.org/7ca4/bcfb186958bafb1bb9512c40a9c54721c9fc.pdf) is the most suitable model to learn crowd counting. The model is not complex and have an acceptable accuracy. We provide an easy [[MCNN_model_code]](./crowd_model/mcnn_model.py) to let you know MCNN rapidly and an easy full realization of [[MCNN-pytorch]](https://github.com/CommissarMa/MCNN-pytorch).  
 If you want more accuracy result, [[paper-CSRNet-CVPR2018]](https://arxiv.org/abs/1802.10062) is a deeper model for crowd counting. It uses dilated convolution to avoid the frequent pooling and upsample. We provide an easy full realization of [[CSRNet-pytorch]](https://github.com/CommissarMa/CSRNet-pytorch).
 
+## Some Crowd-counting Dataset
+UCSD：we provide an processed version with images and point annotations like other crowd-counting dataset.
+Link：https://pan.baidu.com/s/1rykWyMYHMLr99W5CCEXeBQ 
+Extraction code：4u66
+
 ## Learn More
 &emsp;If you want learn more about crowd counting, you can visit [[Awesome Crowd Counting]](https://github.com/gjy3035/Awesome-Crowd-Counting). It collects the papers and opposite codes in the field of crowd counting.
