@@ -20,7 +20,7 @@ If you want more accuracy result, [[paper-CSRNet-CVPR2018]](https://arxiv.org/ab
 ## Some Crowd-counting Dataset
 UCSD：we provide an processed version with images and point annotations like other crowd-counting dataset.
 Link：https://pan.baidu.com/s/1rykWyMYHMLr99W5CCEXeBQ 
-Extraction code：4u66
+Extraction code：4u66 (But I haven't achieved the same performance as showed in [[paper-MCNN-CVPR2016]](https://pdfs.semanticscholar.org/7ca4/bcfb186958bafb1bb9512c40a9c54721c9fc.pdf)
 
 ## Learn More
 &emsp;If you want learn more about crowd counting, you can visit [[Awesome Crowd Counting]](https://github.com/gjy3035/Awesome-Crowd-Counting). It collects the papers and opposite codes in the field of crowd counting.
