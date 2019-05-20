@@ -22,5 +22,8 @@ UCSD：we provide an processed version with images and point annotations like ot
 Link：https://pan.baidu.com/s/1rykWyMYHMLr99W5CCEXeBQ 
 Extraction code：4u66 (But I haven't achieved the same performance as showed in [[paper-MCNN-CVPR2016]](https://pdfs.semanticscholar.org/7ca4/bcfb186958bafb1bb9512c40a9c54721c9fc.pdf)
 
+## Some Tricks
++ use data augumentation such as horizontal flip, crop, illumination change, etc.
+
 ## Learn More
 &emsp;If you want learn more about crowd counting, you can visit [[Awesome Crowd Counting]](https://github.com/gjy3035/Awesome-Crowd-Counting). It collects the papers and opposite codes in the field of crowd counting.
