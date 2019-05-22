@@ -22,6 +22,9 @@ UCSD：we provide an processed version with images and point annotations like ot
 Link：https://pan.baidu.com/s/1rykWyMYHMLr99W5CCEXeBQ 
 Extraction code：4u66 (But I haven't achieved the same performance as showed in [[paper-MCNN-CVPR2016]](https://pdfs.semanticscholar.org/7ca4/bcfb186958bafb1bb9512c40a9c54721c9fc.pdf)
 
+## Code comprehension
+[c^3 Framework](https://github.com/gjy3035/C-3-Framework) ==>[[Comprehension]](./code_comprehension/readme.md)
+
 ## Some Tricks
 + use data augumentation such as horizontal flip, crop, illumination change, etc.
 
