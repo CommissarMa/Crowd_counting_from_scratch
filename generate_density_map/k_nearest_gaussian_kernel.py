@@ -1,3 +1,4 @@
+#%%
 import numpy as np
 import scipy
 import scipy.io as io
@@ -26,7 +27,7 @@ def gaussian_filter_density(img,points):
     img_shape: (768,1024) 768 is row and 1024 is column.
     '''
     img_shape=[img.shape[0],img.shape[1]]
-    print("Shape of current image: ",img_shape,". Totally need generate ",len(gt),"gaussian kernels.")
+    print("Shape of current image: ",img_shape,". Totally need generate ",len(points),"gaussian kernels.")
     density = np.zeros(img_shape, dtype=np.float32)
     gt_count = len(points)
     if gt_count == 0:
@@ -34,9 +35,9 @@ def gaussian_filter_density(img,points):
 
     leafsize = 2048
     # build kdtree
-    tree = scipy.spatial.KDTree(gt.copy(), leafsize=leafsize)
+    tree = scipy.spatial.KDTree(points.copy(), leafsize=leafsize)
     # query kdtree
-    distances, locations = tree.query(gt, k=4)
+    distances, locations = tree.query(points, k=4)
 
     print ('generate density...')
     for i, pt in enumerate(points):
@@ -57,13 +58,13 @@ def gaussian_filter_density(img,points):
 # test code
 if __name__=="__main__":
     # show an example to use function generate_density_map_with_fixed_kernel.
-    root = 'D:\workspace\ShanghaiTech_dataset'
+    root = 'D:\\workspaceMaZhenwei\\GithubProject\\Crowd_counting_from_scratch\\data'
     
-    #now generate the ShanghaiA's ground truth
+    # now generate the ShanghaiA's ground truth
     part_A_train = os.path.join(root,'part_A_final/train_data','images')
     part_A_test = os.path.join(root,'part_A_final/test_data','images')
-    part_B_train = os.path.join(root,'part_B_final/train_data','images')
-    part_B_test = os.path.join(root,'part_B_final/test_data','images')
+    # part_B_train = os.path.join(root,'part_B_final/train_data','images')
+    # part_B_test = os.path.join(root,'part_B_final/test_data','images')
     path_sets = [part_A_train,part_A_test]
     
     img_paths = []
@@ -79,7 +80,10 @@ if __name__=="__main__":
         points = mat["image_info"][0,0][0,0][0] #1546person*2(col,row)
         k = gaussian_filter_density(img,points)
         plt.imshow(k,cmap=CM.jet)
+        print(len(points)) # ground truth person count
+        print(k.sum()) # density_map person count
         break
+        # save density_map to disk
         np.save(img_path.replace('.jpg','.npy').replace('images','ground_truth'), k)
     
     '''
