@@ -1,4 +1,3 @@
-#%%
 import numpy as np
 import scipy
 import scipy.io as io
@@ -16,14 +15,14 @@ def gaussian_filter_density(img,points):
     '''
     This code use k-nearst, will take one minute or more to generate a density-map with one thousand people.
 
-    gt: a two-dimension list of pedestrians' annotation with the order [[col,row],[col,row],...].
+    points: a two-dimension list of pedestrians' annotation with the order [[col,row],[col,row],...].
     img_shape: the shape of the image, same as the shape of required density-map. (row,col). Note that can not have channel.
 
     return:
     density: the density-map we want. Same shape as input image but only has one channel.
 
     example:
-    gt: three pedestrians with annotation:[[163,53],[175,64],[189,74]].
+    points: three pedestrians with annotation:[[163,53],[175,64],[189,74]].
     img_shape: (768,1024) 768 is row and 1024 is column.
     '''
     img_shape=[img.shape[0],img.shape[1]]
