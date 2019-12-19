@@ -9,7 +9,7 @@
 + Since the original author didn't compress the files in the dataset, we compress the dataset and provide a new download link in BaiduDisk: [[password:5qxs]](https://pan.baidu.com/s/10lnJYGnHVEk-u-lJNy5b-Q)
 
 ## Density map prepare code
-+ We first use the fixed gaussian kernel to generate ground truth density map. [[code]](fdst_densitymap_prepare.py)
++ We first use the fixed gaussian kernel to generate ground truth density map. [[fdst_densitymap_prepare.py]](fdst_densitymap_prepare.py)
 
 ## Dataloader code
 + Code for single image crowd counting: [[code]]()
