@@ -31,5 +31,8 @@ Extraction code：4u66 (But I haven't achieved the same performance as showed in
 ## Some Tricks
 + use data augumentation such as horizontal flip, crop, illumination change, etc.
 
+## Other Crowd Counting Branch
+Multi-view crowd counting [[link]](./multi_view_counting/多视角计数调研.md)
+
 ## Learn More
 &emsp;If you want learn more about crowd counting, you can visit [[Awesome Crowd Counting]](https://github.com/gjy3035/Awesome-Crowd-Counting). It collects the papers and opposite codes in the field of crowd counting.
