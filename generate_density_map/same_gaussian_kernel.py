@@ -1,4 +1,5 @@
 import numpy as np
+from scipy.io import loadmat
 
 
 def generate_density_map_with_fixed_kernel(img,points,kernel_size=15,sigma=4.0):
@@ -54,7 +55,7 @@ if __name__=="__main__":
     img_path="D:\workspace\ShanghaiTech_dataset\part_A_final/test_data\images\IMG_8.jpg"
     img=plt.imread(img_path)
     plt.imshow(img)
-    mat = io.loadmat(img_path.replace('.jpg','.mat').replace('images','ground_truth').replace('IMG_','GT_IMG_'))
+    mat = loadmat(img_path.replace('.jpg','.mat').replace('images','ground_truth').replace('IMG_','GT_IMG_'))
     pts = mat["image_info"][0,0][0,0][0] #1546person*2(col,row)
     points=[]
     for p in pts:
